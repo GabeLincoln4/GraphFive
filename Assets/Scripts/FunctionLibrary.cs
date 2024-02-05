@@ -64,4 +64,13 @@ public static class FunctionLibrary {
         p.z = s * Cos(PI * u);
         return p;
     }
+
+    public static FunctionName GetNextFunctionName (FunctionName name) {
+        if ((int)name < functions.Length - 1) {
+            return name + 1;
+        }
+        else {
+            return 0;
+        }
+	}
 }
