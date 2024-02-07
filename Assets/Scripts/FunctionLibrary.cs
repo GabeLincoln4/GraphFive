@@ -15,6 +15,11 @@ public static class FunctionLibrary {
         return functions[(int)name];
     }
 
+    public static FunctionName GetRandomFunctionNameOtherThan (FunctionName name) {
+        var choice = (FunctionName)Random.Range(1, functions.Length);
+        return choice == name ? 0 : choice;
+    }
+
     public static Vector3 Wave (float u, float v, float t) {
         Vector3 p;
         p.x = u;
