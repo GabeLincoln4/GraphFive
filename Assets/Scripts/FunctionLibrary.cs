@@ -78,4 +78,13 @@ public static class FunctionLibrary {
             return 0;
         }
 	}
+
+    public static Vector3 Morph (
+        float u, float v, float time, Function from, Function to, float progress
+    ) {
+        return Vector3.LerpUnclamped(
+            from(u, v, time), 
+            to(u, v, time), 
+            SmoothStep(u, v, progress));
+    }
 }
